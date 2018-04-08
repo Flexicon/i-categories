@@ -1,16 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { ToastContainer } from 'react-toastify';
+import CategoryDashboard from './CategoryDashboard/CategoryDashboard';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+const wrapperStyle = {
+  width: '100%',
+  maxWidth: '1280px',
+  margin: '0 auto',
+  padding: '0 1rem',
+  boxSizing: 'border-box'
+};
+
+const App = () => {
+  return (
+    <MuiThemeProvider>
+      <div style={wrapperStyle}>
+        <ToastContainer />
+        <CategoryDashboard />
       </div>
-    );
-  }
-}
+    </MuiThemeProvider>
+  );
+};
 
 export default App;
