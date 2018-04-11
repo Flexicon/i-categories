@@ -33,7 +33,7 @@ class CategoryDashboard extends Component {
   mapCategories(allCats, parentID) {
     if (parentID === undefined) parentID = 1;
     const filteredCats = allCats.filter(category => category.parent_id === parentID);
-    filteredCats.forEach(fCat => fCat.subcategories = this.mapCategories(allCats, fCat.id));
+    filteredCats.forEach(fCat => fCat.children = this.mapCategories(allCats, fCat.id));
 
     return filteredCats;
   }
