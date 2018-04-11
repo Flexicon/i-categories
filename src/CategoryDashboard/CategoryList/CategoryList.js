@@ -5,9 +5,9 @@ import ListItem from 'material-ui/List/ListItem';
 
 class CategoryList extends Component {
   makeCategoryItem = (category) => {
-    const { id, name, subcategories } = category;
-    const nestedItems = subcategories
-      ? subcategories.map(subCat => this.makeCategoryItem(subCat))
+    const { id, name, children } = category;
+    const nestedItems = children
+      ? children.map(subCat => this.makeCategoryItem(subCat))
       : [];
 
     return (
