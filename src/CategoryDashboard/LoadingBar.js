@@ -11,7 +11,7 @@ const styles = {
     },
     circle: {
         float: 'right',
-        padding: '16px 24px'
+        padding: '24px 48px'
     }
 };
 
@@ -19,7 +19,7 @@ const LoadingBar = (props) => {
     return props.loading ? (
         <div style={styles.wrapper}>
             <LinearProgress mode='indeterminate' />
-            <CircularProgress style={styles.circle} />
+            <CircularProgress size={60} thickness={5} style={styles.circle} />
         </div>
     ) : null;
 };
